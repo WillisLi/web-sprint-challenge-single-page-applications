@@ -35,6 +35,7 @@ const App = () => {
   const [formErrors, setFormErrors] = useState(initialFormErrors)
   const [disabled, setDisabled] = useState(true);
 
+  //Posts pizza to orders URL after submission
   const postPizza = newPizza => {
       axios.post("https://reqres.in/api/orders", newPizza)
         .then(response => {
@@ -49,6 +50,7 @@ const App = () => {
         })
   }
 
+  //Creates a new state which initializes pizza properties to the current form values
   const submitForm = () => {
       const newPizza = {
           name: formValues.name.trim(),
@@ -58,6 +60,7 @@ const App = () => {
       postPizza(newPizza);
   }
 
+  //Validates inputs when called and updates form values
   const inputChange = (name, value) => {
     validate(name, value)
     setFormValues({
@@ -66,10 +69,12 @@ const App = () => {
     })
   }
 
+  //Makes sure the inputs are valid and requirements are adhered every time a form value is updated.
   useEffect(() => {
     formSchema.isValid(formValues).then(valid => setDisabled(!valid))
   }, [formValues])
 
+  //Validates form values and display errors if inputs are not valid.
   const validate = (name, value) => {
     reach(formSchema, name)
       .validate(value)
@@ -87,7 +92,6 @@ const App = () => {
               <Link id = "order-pizza" to = '/pizza'>Pizza?</Link>
             </Route>
         </MainContent>
-        <img src = "../Assets/Pizza.jpg" alt = "pizza img"/>
 
         <Route path = '/pizza'>
           <Form
@@ -107,5 +111,10 @@ export default App;
 //Styled Components
 
 const MainContent = styled.div`
-  background-image: url('/Assets/Pizza.jpg');
+  border: 1px solid black;
+  height: 33vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 `
