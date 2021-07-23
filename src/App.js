@@ -3,12 +3,21 @@ import axios from 'axios';
 import { Link, Route } from "react-router-dom";
 import Form from './Form';
 import { reach } from 'yup';
+import formSchema from "./formSchema"
 
 const initialFormValues = {
   name: "",
   size: "",
-  topping1: false,
-  topping2: false,
+  mushrooms: false,
+  olives: false,
+  pineapple: false,
+  jalapeno: false,
+  anchovies: false,
+  candy: false,
+  onions: false,
+  pepper: false,
+  sausage: false,
+  garlic: false,
   special: "",
 }
 
@@ -43,7 +52,7 @@ const App = () => {
   }
 
   const validate = (name, value) => {
-    reach(schema, name)
+    reach(formSchema, name)
       .validate(value)
       .then(() => setFormErrors({ ...formErrors, [name]: '' }))
       .catch(err => setFormErrors({ ...formErrors, [name]: err.errors[0]}))
@@ -55,6 +64,8 @@ const App = () => {
             values = {formValues}
             submit = {submitForm}
             input = {inputChange}
+            disabled = {disabled}
+            errors = {formErrors}
         /> */}
         <header>
             <h1 className = "companyName">Lambda Eats</h1>

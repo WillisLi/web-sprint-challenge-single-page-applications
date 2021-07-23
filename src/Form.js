@@ -1,10 +1,13 @@
 import React from 'react'
 
 function Form(props) {
-    const { formValues, submit } = props;
+    const { Values, submit, input, disabled, errors } = props;
 
     return (
         <form id = "pizza-form">
+            <header>
+                <h1>Build Your Own Pizza</h1>
+            </header>
             <div>
                 <label>
 
