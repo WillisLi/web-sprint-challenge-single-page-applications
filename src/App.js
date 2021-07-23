@@ -40,8 +40,8 @@ const App = () => {
   const postPizza = newPizza => {
       axios.post("https://reqres.in/api/orders", newPizza)
         .then(response => {
-          setPizza([response.data, ...pizza])
-          console.log(newPizza)
+          setPizza(response.data)
+          console.log(response.data)
         })
         .catch(error => {
           console.log(error)
@@ -57,6 +57,7 @@ const App = () => {
           name: formValues.name.trim(),
           size: formValues.size.trim(),
           special: formValues.special.trim(),
+          toppings: ['mushrooms', 'olives', 'pineapple', 'jalapeno', 'anchovies', 'candy', 'onions', 'pepper', 'sausage', 'garlic'].filter(top => formValues[top])
       }
       postPizza(newPizza);
   }
