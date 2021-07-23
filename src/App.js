@@ -36,12 +36,12 @@ const App = () => {
   const [formErrors, setFormErrors] = useState(initialFormErrors)
   const [disabled, setDisabled] = useState(true);
 
-  //Posts pizza to orders URL after submission
+  //Posts pizza to orders URL after submission, resets form values
   const postPizza = newPizza => {
       axios.post("https://reqres.in/api/orders", newPizza)
         .then(response => {
-          setPizza(newPizza)
-          console.log(pizza)
+          setPizza(response.data)
+          console.log(response.data)
         })
         .catch(error => {
           console.log(error)
