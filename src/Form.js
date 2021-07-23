@@ -144,6 +144,7 @@ function Form(props) {
                         onChange = {onChange}
                         name = 'special'
                         type = 'text'
+                        placeholder = "Anything else you'd like to add?"
                     />
                 </label>
 

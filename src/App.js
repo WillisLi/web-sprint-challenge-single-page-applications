@@ -33,14 +33,27 @@ const App = () => {
   const [formErrors, setFormErrors] = useState(initialFormErrors)
   const [disabled, setDisabled] = useState(true);
 
+  const postPizza = newPizza => {
+      axios.post("https://reqres.in/api/orders", newPizza)
+        .then(response => {
+          console.log(response.data)
+          setPizza(newPizza)
+        })
+        .catch(error => {
+          console.log(error)
+        })
+        .finally(() => {
+          setFormValues(initialFormValues)
+        })
+  }
+
   const submitForm = () => {
       const newPizza = {
           name: formValues.name.trim(),
           size: formValues.size.trim(),
           special: formValues.special.trim(),
       }
-      setPizza([newPizza])
-      setFormValues(initialFormValues);
+      postPizza(newPizza);
   }
 
   const inputChange = (name, value) => {
