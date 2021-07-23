@@ -44,16 +44,8 @@ function Form(props) {
                     </select>
                 </label>
 
-                <div classNames = 'formCheckboxes'>
+                <div className = 'formCheckboxes'>
                     <h2>Toppings</h2>
-                    <label>Mushrooms
-                        <input
-                            type='checkbox'
-                            name='mushrooms'
-                            onChange = {onChange}
-                            checked = {values.mushrooms}
-                        />
-                    </label>
 
                     <label>Mushrooms
                         <input
@@ -118,15 +110,6 @@ function Form(props) {
                         />
                     </label>
 
-                    <label>Onions
-                        <input
-                            type='checkbox'
-                            name='onions'
-                            onChange = {onChange}
-                            checked = {values.onions}
-                        />
-                    </label>
-
                     <label>Pepper
                         <input
                             type='checkbox'
@@ -164,16 +147,16 @@ function Form(props) {
                     />
                 </label>
 
-                <div classNAme = "formSubmit">
+                <div className = "formSubmit">
                     <h2>Add your Pizza</h2>
 
-                    <button disabled={disabled}>submit</button>
+                    <button disabled = {disabled}>Submit</button>
 
                     <div className='errors'>
-                    <div>{errors.name}</div>
-                    <div>{errors.size}</div>
-                    <div>{errors.special}</div>
-                </div>
+                        <div>{errors.name}</div>
+                        <div>{errors.size}</div>
+                        <div>{errors.special}</div>
+                    </div>
                 </div>
             </div>
         </form>

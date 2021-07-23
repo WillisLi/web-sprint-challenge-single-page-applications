@@ -64,13 +64,13 @@ const App = () => {
 
   return (
     <div className = "pizzaApp">
-        {/* <Form
+        <Form
             values = {formValues}
             submit = {submitForm}
             input = {inputChange}
             disabled = {disabled}
             errors = {formErrors}
-        /> */}
+        />
         <header>
             <h1 className = "companyName">Lambda Eats</h1>
         </header>
