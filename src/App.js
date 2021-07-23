@@ -40,7 +40,7 @@ const App = () => {
   const postPizza = newPizza => {
       axios.post("https://reqres.in/api/orders", newPizza)
         .then(response => {
-          setPizza(response.data)
+          setPizza([response.data])
           console.log(response.data)
         })
         .catch(error => {
