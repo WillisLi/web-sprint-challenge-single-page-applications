@@ -4,6 +4,8 @@ import { Link, Route } from "react-router-dom";
 import Form from './Form';
 import { reach } from 'yup';
 import formSchema from "./formSchema"
+import styled from 'styled-components'
+import './App.css';
 
 const initialFormValues = {
   name: "",
@@ -80,11 +82,12 @@ const App = () => {
         <header>
             <h1 className = "companyName">Lambda Eats</h1>
         </header>
-        <div className = "mainContent">
+        <MainContent>
             <Route exact path = '/'>
               <Link id = "order-pizza" to = '/pizza'>Pizza?</Link>
             </Route>
-        </div>
+        </MainContent>
+        <img src = "../Assets/Pizza.jpg" alt = "pizza img"/>
 
         <Route path = '/pizza'>
           <Form
@@ -103,4 +106,6 @@ export default App;
 
 //Styled Components
 
-
+const MainContent = styled.div`
+  background-image: url('/Assets/Pizza.jpg');
+`

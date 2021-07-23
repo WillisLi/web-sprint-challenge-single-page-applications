@@ -37,6 +37,6 @@
   }
 }
 
-.mainImage {
-    background-image: url("../Assets/Pizza.jpg");
+#order-pizza {
+    text-decoration: none;
 }
