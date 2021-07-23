@@ -1,7 +1,7 @@
 import React from 'react'
 
 function Form(props) {
-    const { Values, submit, input, disabled, errors } = props;
+    const { values, submit, input, disabled, errors } = props;
 
     return (
         <form id = "pizza-form">

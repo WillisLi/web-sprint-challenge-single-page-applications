@@ -51,6 +51,10 @@ const App = () => {
     })
   }
 
+  useEffect(() => {
+    formSchema.isValid(formValues).then(valid => setDisabled(!valid))
+  }, [formValues])
+
   const validate = (name, value) => {
     reach(formSchema, name)
       .validate(value)
