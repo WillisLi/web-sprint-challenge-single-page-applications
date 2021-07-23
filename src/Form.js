@@ -22,6 +22,7 @@ function Form(props) {
             <div>
                 <label>Name
                     <input
+                        id = "name-input" 
                         value = {values.name}
                         onChange = {onChange}
                         name = 'name'
@@ -31,6 +32,7 @@ function Form(props) {
 
                 <label>Size
                     <select
+                        id = "size-dropdown" 
                         onChange = {onChange}
                         value = {values.size}
                         name = "size"
@@ -140,6 +142,7 @@ function Form(props) {
 
                 <label>Special
                     <input 
+                        id = "special-text"
                         value = {values.special}
                         onChange = {onChange}
                         name = 'special'
@@ -151,7 +154,7 @@ function Form(props) {
                 <div className = "formSubmit">
                     <h2>Add your Pizza</h2>
 
-                    <button disabled = {disabled}>Submit</button>
+                    <button id = "order-button" disabled = {disabled}>Add to Order</button>
 
                     <div className='errors'>
                         <div>{errors.name}</div>

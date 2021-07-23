@@ -77,20 +77,30 @@ const App = () => {
 
   return (
     <div className = "pizzaApp">
-        <Form
+        <header>
+            <h1 className = "companyName">Lambda Eats</h1>
+        </header>
+        <div className = "mainContent">
+            <Route exact path = '/'>
+              <Link id = "order-pizza" to = '/pizza'>Pizza?</Link>
+            </Route>
+        </div>
+
+        <Route path = '/pizza'>
+          <Form
             values = {formValues}
             submit = {submitForm}
             input = {inputChange}
             disabled = {disabled}
             errors = {formErrors}
-        />
-        <header>
-            <h1 className = "companyName">Lambda Eats</h1>
-        </header>
-        <div className = "mainImage">
-            <Link id = "order-pizza" to = '/'>Pizza?</Link>
-        </div>
+          />
+        </Route>
     </div>
   );
 };
+
 export default App;
+
+//Styled Components
+
+
