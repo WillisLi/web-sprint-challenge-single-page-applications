@@ -6,6 +6,7 @@ import { reach } from 'yup';
 import formSchema from "./formSchema"
 import styled from 'styled-components'
 import './App.css';
+import img from './Assets/Pizza.jpg';
 
 const initialFormValues = {
   name: "",
@@ -39,8 +40,8 @@ const App = () => {
   const postPizza = newPizza => {
       axios.post("https://reqres.in/api/orders", newPizza)
         .then(response => {
-          console.log(response.data)
           setPizza(newPizza)
+          console.log(pizza)
         })
         .catch(error => {
           console.log(error)
@@ -117,4 +118,6 @@ const MainContent = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  background-image: url(${img});
+  background-size: cover;
 `

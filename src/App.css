@@ -39,10 +39,11 @@
 
 #order-pizza {
     text-decoration: none;
+    background-color: white;
     color: gray;
     font-size: 1.6rem;
     font-family: sans-serif;
     border: 2px solid darkgray;
     border-radius: 15px;
-    padding: 0.5% 1%;
+    padding: 1% 2.5%;
 }
