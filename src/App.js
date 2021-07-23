@@ -64,7 +64,7 @@ const App = () => {
           jalapeno: formValues.jalapeno,
           anchovies: formValues.anchovies,
           candy: formValues.candy,
-          onions: formValues.onion,
+          onions: formValues.onions,
           pepper: formValues.pepper,
           sausage: formValues.sausage,
           garlic: formValues.garlic,
