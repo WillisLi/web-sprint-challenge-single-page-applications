@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.mainImage {
+    background-image: url("../Assets/Pizza.jpg");
+}
